@@ -1,6 +1,5 @@
 @import "./custom_colors.scss";
 
-
 .notes {
     height: calc(100% - 70px);
 }
@@ -16,6 +15,21 @@
     width: 120% !important;
     margin-top: 12px;
 }
+
+#note-title-column {
+    justify-content: space-between;
+}
+
+#note-title {
+    padding: 0;
+    // background-color: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+
 
 .list-item.is-active {
     background-color: $custom-grey-light !important;

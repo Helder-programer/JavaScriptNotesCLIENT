@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer } from 'react';
 import { Button, Column, Tag, Title, List, Input } from "rbx";
 import Moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,59 +7,70 @@ import { AiFillEdit } from 'react-icons/ai';
 import '../../../styles/notes.scss';
 
 
-function ListNotes(props) {
-    const [isNoteTitleAlteration, setIsNoteTitleAlteration] = useState(false);
-    const [noteTitle, setNoteTitle] = useState('');
+const reducer = (state, actions) => {
+    switch (actions.type) {
+        case 'note-title-alteration':
+            return { ...state, isNoteTitleAlteration: !state.isNoteTitleAlteration };
+        case 'note-title-input':
+            return { ...state, noteTitle: actions.payload };
+        default:
+            return state;
+    }
+}
+
+function ListNotes({ notes, selectNote, currentNote, createNote, deleteNote, updateNote }) {
+    const [state, dispatch] = useReducer(reducer, { isNoteTitleAlteration: false, noteTitle: '' });
+
+    const handleSubmitNoteTitleForm = event => {
+        event.preventDefault();
+        updateNote(currentNote, { title: state.noteTitle });
+        dispatch({ type: 'note-title-alteration' });
+    }
+
 
     return (
         <>
             <Column.Group breakpoint="mobile">
                 <Column size={6} offset={1}>
                     <Title size={6}>
-                        {props.notes.length} Notes
+                        {notes.length} Notes
                     </Title>
 
                 </Column>
                 <Column size={2}>
-                    <Button color="custom-purple" outlined size="normal" onClick={() => props.createNote()}>
+                    <Button color="custom-purple" outlined size="normal" onClick={() => createNote()}>
                         Notes +
                     </Button>
                 </Column>
             </Column.Group>
             <List className="notes-list">
-                {props.notes.map((item, key) =>
-                    <List.Item key={key} onClick={() => props.selectNote(item._id)} active={item == props.currentNote}>
-                        {/* {item.body.replace(/(<([^>]+)>)/ig, "").substring(0, 25)} */}
-                        {/* {
-                                ['<h1>', '<h2>', '<b>'].includes(item.body.split(/(<([^>]+)>)/ig)[1]) ?
-                                    item.body.split(/(<([^>]+)>)/ig)[3] :  item.body.replace(/(<([^>]+)>)/ig, "").substring(0, 25)
-                            } */}
-
+                {notes.map((note, key) =>
+                    <List.Item key={key} onClick={() => selectNote(note._id)} active={note === currentNote}>
                         <Title size={5} >
                             <Column.Group className="is-vcentered" id="note-title-column">
-                                <form action="" method="">
+                                <form action="" method="" onSubmit={handleSubmitNoteTitleForm}>
                                     <Column size={12}>
                                         {
-                                            isNoteTitleAlteration ?
+                                            state.isNoteTitleAlteration && note === currentNote ?
                                                 <Input
                                                     type="text"
                                                     name="title"
                                                     required
-                                                    value={noteTitle}
-                                                    onChange={event => setNoteTitle(event.target.value)}
-                                                    onBlur={() => setIsNoteTitleAlteration(!isNoteTitleAlteration)}
+                                                    value={state.noteTitle}
+                                                    onChange={event => dispatch({ type: 'note-title-input', payload: event.target.value })}
+                                                    onBlur={() => dispatch({ type: 'note-title-alteration' })}
                                                     id="note-title"
                                                     autoFocus
-                                                /> : item.title
+                                                /> : note.title
                                         }
                                     </Column>
                                 </form>
                                 <Column size={2}>
                                     {
-                                        !isNoteTitleAlteration &&
+                                        !state.isNoteTitleAlteration &&
                                         <AiFillEdit id="edit-icon" onClick={() => {
-                                            setIsNoteTitleAlteration(!isNoteTitleAlteration);
-                                            setNoteTitle(item.title);
+                                            dispatch({ type: 'note-title-alteration' });
+                                            dispatch({ type: 'note-title-input', payload: note.title });
                                         }} />
                                     }
                                 </Column>
@@ -68,20 +79,20 @@ function ListNotes(props) {
 
                         <Title size={6} subtitle spaced={false}>
                             {
-                                item.body.replace(/(<([^>]+)>)/ig, "").substring(0, 30) + '...'
+                                `${note.body.replace(/(<([^>]+)>)/ig, "").substring(0, 30)}...`
                             }
                         </Title>
 
                         <Column.Group breakpoint="mobile">
                             <Column size={10}>
                                 <Tag color="dark">
-                                    {Moment(item.created_at).format('DD/MM')}
+                                    {Moment(note.created_at).format('DD/MM/YYYY')}
                                 </Tag>
                             </Column>
                             <Column size={2}>
                                 <FontAwesomeIcon
                                     icon={faTrash}
-                                    onClick={() => props.deleteNote(item._id)}
+                                    onClick={() => deleteNote(note._id)}
                                     color="grey"
                                 />
                             </Column>

@@ -58,7 +58,6 @@ function Notes({ setIsOpen, isOpen }) {
             await NotesService.delete(id);
             getNotes();
         }
-
     }
 
 
@@ -66,6 +65,7 @@ function Notes({ setIsOpen, isOpen }) {
         const response = await NotesService.search(query);
         setNotes(response.data);
     }
+
 
     return (
         <>
@@ -89,7 +89,8 @@ function Notes({ setIsOpen, isOpen }) {
                         selectNote={selectNote}
                         currentNote={currentNote}
                         createNote={createNote}
-                        deleteNote={deleteNote}
+                        deleteNote={deleteNote} 
+                        updateNote={updateNote}
                     />
                 </Menu>
 

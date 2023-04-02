@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const Api = axios.create({ baseURL: process.env.PROJECT_API });
+const Api = axios.create({ baseURL: 'https://javascriptnotesapi.onrender.com'});
 
 
 export default Api;

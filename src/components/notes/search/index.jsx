@@ -20,7 +20,7 @@ function SearchNotes(props) {
                         name={query}
                         value={query}
                         placeholder="Search note..."
-                        onChange={(event) => setQuery(event.target.value)}
+                        onChange={event => setQuery(event.target.value)}
                         onKeyDown={handleKeyDown} />
                 </Column>
                 <Column size={1}>

@@ -1,0 +1,22 @@
+@import './custom_colors.scss';
+.auth {
+    background-color: $custom-purple;
+    // height: calc(100% - 70px);
+    height: 110%;
+}
+
+.auth-card {
+    border: 1px solid #d3d3d3;
+    box-shadow: 0px 5px 15px #504e4e !important;
+    border-radius: 8px;
+}
+
+.auth-form {
+    width: 100%;
+}
+
+.buttons {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}

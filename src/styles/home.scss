@@ -1,0 +1,15 @@
+@import "./custom_colors";
+
+.home {
+    background-color: $custom-purple;
+    height: calc(100% - 70px);
+    overflow: hidden;
+}
+
+
+@media screen and (max-width: 800px) {
+    .home {
+        height: auto;
+        overflow: scroll;
+    }
+}

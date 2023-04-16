@@ -45,7 +45,7 @@ function ListNotes({ notes, selectNote, currentNote, createNote, deleteNote, upd
             </Column.Group>
             <List className="notes-list">
                 {notes.map((note, key) =>
-                    <List.Item key={key} onClick={() => selectNote(note._id)} active={note === currentNote}>
+                    <List.Item key={key} onClick={() => selectNote(note._id)} active={note._id === currentNote._id}>
                         <Title size={5} >
                             <Column.Group className="is-vcentered" id="note-title-column">
                                 <form action="" method="" onSubmit={handleSubmitNoteTitleForm}>

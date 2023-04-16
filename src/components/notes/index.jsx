@@ -32,7 +32,7 @@ function Notes({ setIsOpen, isOpen }) {
 
     const selectNote = noteId => {
         const note = notes.find(currentNote => {
-            return currentNote._id == noteId;
+            return currentNote._id === noteId;
         });
         setCurrentNote(note);
     }
@@ -45,9 +45,16 @@ function Notes({ setIsOpen, isOpen }) {
 
     const updateNote = async (oldNote, params) => {
         const updatedNote = await NotesService.update(oldNote._id, params);
-        const index = notes.indexOf(oldNote);
+        // const index = notes.indexOf(oldNote);
         const newNotes = notes;
-        newNotes[index] = updatedNote.data;
+
+        let searchedNote = newNotes.find(currentNote => {
+            return currentNote._id === oldNote._id;
+        });
+
+        searchedNote = updatedNote.data;
+
+        // newNotes[index] = updatedNote.data;
         setNotes(newNotes);
         setCurrentNote(updatedNote.data);
     }
@@ -71,7 +78,7 @@ function Notes({ setIsOpen, isOpen }) {
         <>
             <Column.Group className="notes" id="notes">
                 <Menu
-                    // pageWrapId={"notes-editor"}
+                    pageWrapId={"notes-editor"}
                     isOpen={isOpen}
                     onStateChange={(state) => setIsOpen(state.isOpen)}
                     disableAutoFocus
@@ -94,7 +101,7 @@ function Notes({ setIsOpen, isOpen }) {
                     />
                 </Menu>
 
-                <Column size={12} className="notes-editor">
+                <Column size={12} className="notes-editor" id="notes-editor">
                     { notes.length >= 1 ?
                         <Editor
                             currentNote={currentNote}

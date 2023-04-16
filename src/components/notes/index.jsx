@@ -45,16 +45,16 @@ function Notes({ setIsOpen, isOpen }) {
 
     const updateNote = async (oldNote, params) => {
         const updatedNote = await NotesService.update(oldNote._id, params);
-        // const index = notes.indexOf(oldNote);
         const newNotes = notes;
 
-        let searchedNote = newNotes.find(currentNote => {
-            return currentNote._id === oldNote._id;
-        });
 
-        searchedNote = updatedNote.data;
+        for (let currentNoteIndex in newNotes) {
+            console.log(currentNoteIndex);
+            let isEqualNote = newNotes[currentNoteIndex]._id === oldNote._id;
+            if (isEqualNote) newNotes[currentNoteIndex] = updatedNote.data;
+        }
 
-        // newNotes[index] = updatedNote.data;
+
         setNotes(newNotes);
         setCurrentNote(updatedNote.data);
     }
@@ -96,13 +96,13 @@ function Notes({ setIsOpen, isOpen }) {
                         selectNote={selectNote}
                         currentNote={currentNote}
                         createNote={createNote}
-                        deleteNote={deleteNote} 
+                        deleteNote={deleteNote}
                         updateNote={updateNote}
                     />
                 </Menu>
 
                 <Column size={12} className="notes-editor" id="notes-editor">
-                    { notes.length >= 1 ?
+                    {notes.length >= 1 ?
                         <Editor
                             currentNote={currentNote}
                             updateNote={updateNote}

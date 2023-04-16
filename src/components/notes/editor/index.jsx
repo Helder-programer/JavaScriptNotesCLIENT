@@ -10,7 +10,7 @@ function Editor({ currentNote, updateNote }) {
 
     useEffect(() => {
         setCurrentContent(currentNote.body);
-    }, [currentNote.body]);
+    }, [currentNote]);
 
 
 

@@ -1,7 +1,7 @@
 import { Notification, Section } from 'rbx';
 import HomeScreen from './screens/home';
 import MainRoutes from './routes';
-import './App.scss';
+import './styles/App.scss';
 
 
 function App() {

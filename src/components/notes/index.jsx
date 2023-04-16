@@ -47,14 +47,11 @@ function Notes({ setIsOpen, isOpen }) {
         const updatedNote = await NotesService.update(oldNote._id, params);
         const newNotes = notes;
 
-
         for (let currentNoteIndex in newNotes) {
-            console.log(currentNoteIndex);
             let isEqualNote = newNotes[currentNoteIndex]._id === oldNote._id;
             if (isEqualNote) newNotes[currentNoteIndex] = updatedNote.data;
         }
-
-
+        
         setNotes(newNotes);
         setCurrentNote(updatedNote.data);
     }
@@ -67,12 +64,10 @@ function Notes({ setIsOpen, isOpen }) {
         }
     }
 
-
     const searchNotes = async query => {
         const response = await NotesService.search(query);
         setNotes(response.data);
     }
-
 
     return (
         <>

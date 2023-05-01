@@ -1,8 +1,7 @@
 @import './custom_colors.scss';
 .auth {
     background-color: $custom-purple;
-    // height: calc(100% - 70px);
-    height: 110%;
+    height: calc(100% - 60px);
 }
 
 .auth-card {
@@ -19,4 +18,17 @@
     width: 100% !important;
     display: flex !important;
     justify-content: space-between !important;
+}
+
+
+@media screen and (max-width: 800px) {
+    .auth {
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width: 824px) and (max-width: 950px) {
+    .auth {
+        height: 160vh;
+    }
 }

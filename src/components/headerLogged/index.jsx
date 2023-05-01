@@ -73,7 +73,7 @@ function HeaderLogged({ setIsOpen }) {
                                 </Button>
                             </Dropdown.Trigger>
                             <Dropdown.Menu>
-                                <Dropdown.Content>
+                                <Dropdown.Content id='user-dropdown'>
                                     <Dropdown.Item as="div">
                                         <Link to="/users/edit">User Edit</Link>
                                     </Dropdown.Item>

@@ -10,7 +10,7 @@ function RegisterScreen() {
     return (
         <>
             <Header />
-            <Section size="small" className="auth">
+            <Section size="small" className="auth columns is-vcentered fadein">
                 <Container>
                     <Column.Group centered className='auth-container'>
                         <Column size={4}>

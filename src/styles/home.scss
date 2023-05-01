@@ -2,14 +2,14 @@
 
 .home {
     background-color: $custom-purple;
-    height: calc(100% - 70px);
+    height: calc(100% - 60px);
     overflow: hidden;
 }
 
 
 @media screen and (max-width: 800px) {
     .home {
-        height: auto;
+        height: 100vh !important;
         overflow: scroll;
     }
 }

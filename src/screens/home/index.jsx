@@ -8,17 +8,16 @@ import '../../styles/home.scss';
 function HomeScreen() {
     return (
         <>
-            <Header />
-            <Section size="medium" className="home">
+            <Header/>
+            <Section size="medium" className="home fadein columns is-vcentered">
                 <Container>
                     <Column.Group>
                         <Column size={5}>
                             <Title size={2} spaced className="has-text-white">
-                                Create notes easily and access when you wants on the cloud
+                                Welcome to JavascriptNotes!
                             </Title>
-                            <Title size={5} spaced className="has-text-light" subtitle>
-                                Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.<br /><br />
-                                Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.
+                            <Title size={5} className="has-text-white">
+                            Create notes easily and access when you wants on the cloud
                             </Title>
                             <Link className="button is-outlined is-white is-large" to='/register'>
                                 <strong>Register for free Now</strong>

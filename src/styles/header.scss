@@ -27,3 +27,18 @@ nav.navbar {
     align-items: center !important;
     gap: 10px;
 }
+
+
+#user-dropdown {
+    overflow: hidden;
+    animation: dropdownAnimation 0.2s forwards linear;
+    height: 150px;
+}
+
+
+@keyframes dropdownAnimation {
+    from {
+        height: 0px;
+        opacity: 0;
+    }
+}

@@ -3,3 +3,19 @@ html, body, #root {
     padding: 0;
     height: 100%;
 }
+
+
+
+.fadein {
+    animation: fadeIn 0.5s 1 ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

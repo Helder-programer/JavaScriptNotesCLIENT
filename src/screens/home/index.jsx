@@ -12,14 +12,15 @@ function HomeScreen() {
             <Section size="medium" className="home fadein columns is-vcentered">
                 <Container>
                     <Column.Group>
-                        <Column size={5}>
-                            <Title size={2} spaced className="has-text-white">
+                        <Column size={5} id="left-home">
+                            <Title size={2} spaced className="has-text-white" id="page-title">
                                 Welcome to JavascriptNotes!
                             </Title>
-                            <Title size={5} className="has-text-white">
-                            Create notes easily and access when you wants on the cloud
+                            <Title size={5} className="has-text-white" id="page-subtitle">
+                                Create notes easily and access when you wants on the cloud
                             </Title>
-                            <Link className="button is-outlined is-white is-large" to='/register'>
+
+                            <Link id="page-button" className="button mgt-large is-outlined is-white is-large" to='/register'>
                                 <strong>Register for free Now</strong>
                             </Link>
                         </Column>

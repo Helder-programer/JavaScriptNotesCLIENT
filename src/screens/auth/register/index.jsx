@@ -10,11 +10,11 @@ function RegisterScreen() {
     return (
         <>
             <Header />
-            <Section size="small" className="auth columns is-vcentered fadein">
+            <Section size="small" className="auth columns is-vcentered">
                 <Container>
                     <Column.Group centered className='auth-container'>
                         <Column size={4}>
-                            <Card className='auth-card'>
+                            <Card className='auth-card fadein'>
                                 <Card.Content>
                                     <Section>
                                         <Column.Group centered>

@@ -2,8 +2,27 @@
 
 .home {
     background-color: $custom-purple;
-    height: calc(100% - 60px);
+    height: calc(100% - 58px);
     overflow: hidden;
+}
+
+
+#page-title {
+    letter-spacing: -0.75px;
+    font-weight: bold;
+}
+
+
+#page-subtitle {
+    font-weight: 400;
+    
+}
+
+#left-home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 

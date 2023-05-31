@@ -12,11 +12,11 @@ function UserEditScreen() {
     return (
         <>
             <Header />
-            <Section size="small" className="auth fadein">
+            <Section size="small" className="is-vcentered columns" id="edit-user">
                 <Container>
                     <Column.Group centered>
                         <Column size={4}>
-                            <Card className='auth-card'>
+                            <Card className='auth-card fadein'>
                                 <Card.Content>
 
                                     <Section>

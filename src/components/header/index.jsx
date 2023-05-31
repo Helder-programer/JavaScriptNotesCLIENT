@@ -11,7 +11,7 @@ function Header() {
 
 
     return (
-        <Navbar className="fadein">
+        <Navbar>
             <Container>
                 <Navbar.Brand>
                     <Link to={!user ? '/' : ''}>

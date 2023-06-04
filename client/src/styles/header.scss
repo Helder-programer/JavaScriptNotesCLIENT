@@ -1,0 +1,44 @@
+@import "./custom";
+
+nav.navbar {
+  height: 70px;
+  border-bottom: 1px solid black;
+
+  .navbar-brand {
+    a > img {
+      height: 40px;
+      margin-top:15px;
+    }
+  }
+}
+
+.navbar-logged {
+    .navbar-menu {
+        background-color: $custom-purple;
+    }
+
+    #delete-account-button {
+        color: red;
+    }
+}
+
+#current-user {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px;
+}
+
+
+#user-dropdown {
+    overflow: hidden;
+    animation: dropdownAnimation 0.2s forwards linear;
+    height: 150px;
+}
+
+
+@keyframes dropdownAnimation {
+    from {
+        height: 0px;
+        opacity: 0;
+    }
+}

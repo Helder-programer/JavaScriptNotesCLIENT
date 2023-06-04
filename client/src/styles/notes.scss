@@ -1,0 +1,45 @@
+@import "./custom.scss";
+
+.notes {
+    height: calc(100% - 70px);
+}
+
+
+.bm-menu {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-top: 12px;
+}
+
+.bm-overlay {
+    width: 120% !important;
+    margin-top: 12px;
+}
+
+#note-title-column {
+    justify-content: space-between;
+}
+
+#note-title {
+    padding: 0;
+    // background-color: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+
+
+.list-item.is-active {
+    background-color: $custom-gra-light !important;
+}
+
+
+.notes-editor {
+    padding: 0;
+    height: calc(100% - 19px);
+    .quill {
+        height: 100%;
+    }
+}

@@ -1,4 +1,4 @@
-@import "./custom_colors.scss";
+@import "./custom.scss";
 
 .notes {
     height: calc(100% - 70px);
@@ -22,7 +22,6 @@
 
 #note-title {
     padding: 0;
-    // background-color: transparent;
     border: none;
     box-shadow: none;
     font-size: 13pt;
@@ -30,9 +29,8 @@
 }
 
 
-
 .list-item.is-active {
-    background-color: $custom-grey-light !important;
+    background-color: $custom-gray-light !important;
 }
 
 
@@ -41,5 +39,24 @@
     height: calc(100% - 19px);
     .quill {
         height: 100%;
+    }
+}
+
+#cloud-icon-saved, #cloud-icon-saving {
+    font-size: 12pt;
+    position: absolute;
+    left: 94%;
+    top: 13%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+@media screen and (max-width: 1115px) {
+    #cloud-icon-saved>span, #cloud-icon-saving>span {
+        display: none;
     }
 }

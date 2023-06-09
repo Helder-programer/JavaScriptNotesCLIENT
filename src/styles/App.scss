@@ -1,17 +1,16 @@
 @charset 'utf-8';
 @import "~bulma/sass/utilities/functions";
-@import "./custom_colors.scss";
+@import './custom.scss';
+
 
 * {
     box-sizing: border-box !important;
 }
 
-$custom-colors: (
-    "custom-purple": ($custom-purple),
-    "custom-purple-dark": ($custom-purple-dark)
-);
 
+$primary: $custom-purple;
+$dark: $custom-purple-dark;
 
-@import "~bulma/bulma";
+@import "~bulma/bulma.sass";
 
-@import "~rbx/rbx";
+@import "~rbx/rbx.sass";

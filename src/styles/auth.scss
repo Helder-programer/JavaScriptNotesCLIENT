@@ -1,4 +1,4 @@
-@import './custom_colors.scss';
+@import './custom.scss';
 .auth {
     background-color: $custom-purple;
     height: calc(100% - 58px);
@@ -13,7 +13,7 @@
 .auth-card {
     border: 1px solid #d3d3d3;
     box-shadow: 0px 5px 15px #504e4e !important;
-    border-radius: 8px;
+    border-radius: 8px !important;
 }
 
 .auth-form {
@@ -35,6 +35,6 @@
 
 @media screen and (min-width: 824px) and (max-width: 950px) {
     .auth {
-        height: 160vh;
+        height: auto;
     }
 }

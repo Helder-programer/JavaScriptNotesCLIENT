@@ -17,8 +17,8 @@ function RegisterScreen() {
                             <Card className='auth-card fadein'>
                                 <Card.Content>
                                     <Section>
-                                        <Column.Group centered>
-                                            <Column size={10}>
+                                        <Column.Group vcentered>
+                                            <Column style={{ display: 'flex', justifyContent: 'center' }}>
                                                 <img src={LogoImage} />
                                             </Column>
                                         </Column.Group>

@@ -41,7 +41,10 @@ function Editor({ currentNote, updateNote }: IProps) {
 
     const modules = {
         toolbar: [
-            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+            [{ 'font': [] }],
+            [{ 'align': [] }],
+            [{ 'color': [] }, { 'background': [] }],
             ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
             [{ 'list': 'ordered' }, { 'list': 'bullet' },
             { 'indent': '-1' }, { 'indent': '+1' }],

@@ -2,18 +2,18 @@
 
 .notes {
     height: calc(100% - 70px);
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 
 .bm-menu {
     background-color: #ffffff;
     padding: 10px;
-    margin-top: 12px;
 }
 
 .bm-overlay {
     width: 120% !important;
-    margin-top: 12px;
 }
 
 #note-title-column {
@@ -35,18 +35,26 @@
 
 
 .notes-editor {
-    padding: 0;
-    height: calc(100% - 19px);
+    padding: 0 !important;
+    height: calc(100% - 25px);
+    position: relative;
+    margin: 0 auto;
+
     .quill {
         height: 100%;
+
+        .ql-container {
+            height: calc(100% - 43px);
+            overflow: auto;
+        }
     }
 }
 
 #cloud-icon-saved, #cloud-icon-saving {
     font-size: 12pt;
     position: absolute;
-    left: 94%;
-    top: 13%;
+    right: 10px;
+    top: 43px;
     margin-right: 10px;
     display: flex;
     justify-content: center;
@@ -58,5 +66,13 @@
 @media screen and (max-width: 1115px) {
     #cloud-icon-saved>span, #cloud-icon-saving>span {
         display: none;
+    }
+
+    #cloud-icon-saved, #cloud-icon-saving {
+        top: 15px;
+    }
+
+    .notes-editor {
+        width: 100% !important;
     }
 }

@@ -16,10 +16,9 @@ function UserEditScreen() {
                         <Column size={4}>
                             <Card className='auth-card fadein'>
                                 <Card.Content>
-
                                     <Section>
                                         <Column.Group centered>
-                                            <Column size={10}>
+                                            <Column>
                                                 <img src={LogoImage} />
                                             </Column>
                                         </Column.Group>

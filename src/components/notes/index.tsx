@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
-import { push as Menu } from 'react-burger-menu';
+import { slide as Menu } from 'react-burger-menu';
 import { Column } from 'rbx';
 import NoteService from '../../services/notes/notes';
 import ListNotes from './list/index';
@@ -7,7 +7,6 @@ import Editor from './editor/index';
 import Search from './search/index';
 import '../../styles/notes.scss';
 import { INote } from '../../types/INote';
-import { IUpdateNoteDTO } from '../../services/notes/dtos/IUpdateNoteDTO';
 
 interface IProps {
     isOpen: boolean;
@@ -105,7 +104,7 @@ function Notes({ setIsOpen, isOpen }: IProps) {
                     />
                 </Menu>
 
-                <Column size={12} className="notes-editor" id="notes-editor">
+                <Column size={'half'} className="notes-editor" id="notes-editor">
                     {notes.length >= 1 ?
                         <Editor
                             currentNote={currentNote}

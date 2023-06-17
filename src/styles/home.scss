@@ -26,9 +26,9 @@
 }
 
 
-@media screen and (max-width: 800px) {
-    .home {
-        height: 100vh !important;
-        overflow: scroll;
+
+@media screen and (max-width: 780px) {
+    #left-home {
+        align-items: center;
     }
 }

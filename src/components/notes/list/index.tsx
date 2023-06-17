@@ -1,7 +1,6 @@
 import React, { useReducer, ChangeEvent, FormEvent } from 'react';
 import { Button, Column, Tag, Title, List, Input } from "rbx";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { FaTrash } from 'react-icons/fa';
 import { AiFillEdit } from 'react-icons/ai';
 import Moment from 'moment';
 
@@ -111,8 +110,7 @@ function ListNotes({ notes, selectNote, currentNote, createNote, deleteNote, upd
                                 </Tag>
                             </Column>
                             <Column size={2}>
-                                <FontAwesomeIcon
-                                    icon={faTrash}
+                                <FaTrash
                                     onClick={() => deleteNote(note._id)}
                                     color="grey"
                                 />

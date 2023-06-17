@@ -19,7 +19,7 @@ function LoginScreen() {
 
                                     <Section>
                                         <Column.Group centered>
-                                            <Column size={10}>
+                                            <Column style={{ display: 'flex', justifyContent: 'center' }}>
                                                 <img src={LogoImage} />
                                             </Column>
                                         </Column.Group>
@@ -31,7 +31,7 @@ function LoginScreen() {
                                                 </Title>
                                             </Column>
                                         </Column.Group>
-                                        <LoginForm/>
+                                        <LoginForm />
                                     </Section>
                                 </Card.Content>
                             </Card>

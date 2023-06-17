@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
 import { Input, Column } from "rbx";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FaTimes } from 'react-icons/fa';
 
 interface IProps {
     searchNotes(query: string): Promise<void>;
@@ -32,8 +31,7 @@ function SearchNotes({ searchNotes, getNotes }: IProps) {
                         getNotes()
                         setQuery('')
                     }}>
-                        <FontAwesomeIcon
-                            icon={faTimes}
+                        <FaTimes
                             color="grey"
                             className="is-pulled-left"
                             fontSize={'15pt'}

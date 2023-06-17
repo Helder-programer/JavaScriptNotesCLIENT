@@ -2,8 +2,7 @@ import React, { Dispatch, SetStateAction, useState } from 'react';
 import { Navbar, Column, Button, Dropdown } from 'rbx';
 import { FaUserAlt } from 'react-icons/fa';
 import { useNavigate, Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList } from '@fortawesome/free-solid-svg-icons';
+import { FaList } from 'react-icons/fa';
 
 import LogoImage from '../../assets/images/logo-white.png';
 import UserService from '../../services/users/users';
@@ -62,7 +61,7 @@ function HeaderLogged({ setIsOpen }: IProps) {
                             outlined
                             onClick={() => setIsOpen(true)}
                         >
-                            <FontAwesomeIcon icon={faList} />
+                            <FaList />
                         </Button>
                     </Navbar.Item>
                 </Navbar.Segment>

@@ -7,7 +7,7 @@
 
 #edit-user {
     background-color: $custom-purple;
-    height: 100%;
+    height: auto;
 }
 
 .auth-card {
@@ -27,14 +27,17 @@
 }
 
 
-@media screen and (max-width: 800px) {
-    .auth {
-        height: 100vh;
+@media screen and (max-width: 950px) {
+    .auth, #edit-user {
+        height: 100vh !important;
+    }
+    body {
+        overflow-x: hidden;
     }
 }
 
-@media screen and (min-width: 824px) and (max-width: 950px) {
-    .auth {
-        height: auto;
-    }
-}
+// @media screen and (min-width: 824px) and (max-width: 950px) {
+//     .auth {
+//         height: auto;
+//     }
+// }

@@ -74,5 +74,25 @@
 
     .notes-editor {
         width: 100% !important;
+        height: calc(100%);
+    }
+}
+
+@media print {
+    nav, .ql-toolbar, #cloud-icon-saved, #cloud-icon-saving {
+        display: none;
+    }
+
+    #notes-editor {
+        width: auto;
+    }
+
+    .ql-container.ql-snow {
+        border: none !important;
+    }
+
+    .ql-editor {
+        width: 100vw;
+        height: 100vh;
     }
 }

@@ -17,6 +17,8 @@ function Notes({ setIsOpen, isOpen }: IProps) {
     const [notes, setNotes] = useState<INote[]>([]);
     const [currentNote, setCurrentNote] = useState<INote>({} as INote);
 
+    
+    
     async function getNotes() {
         const response = await NoteService.index();
         if (response.data.length >= 1) {
@@ -106,6 +108,7 @@ function Notes({ setIsOpen, isOpen }: IProps) {
 
                 <Column size={'half'} className="notes-editor" id="notes-editor">
                     {notes.length >= 1 ?
+                        
                         <Editor
                             currentNote={currentNote}
                             updateNote={updateNote}
